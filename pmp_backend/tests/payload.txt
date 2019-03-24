@@ -1,0 +1,192 @@
+#### Login
+url : http://0.0.0.0:5005/api/login/
+method : GET
+Headers : {
+	"Content-Type": "application/json"
+	}
+Authorization : {
+	"type": "Basic Auth",
+	"username": "wgcyrl_2@email.com",
+	"password":"cyril@12345"
+}
+
+
+#### Create User, only admin user for the moment, but you can comment out the code as needed
+url : http://0.0.0.0:5005/api/user/
+method : POST
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+payload : {
+	"name":"cyril_2",
+	"email": "wgcyrl_2@email.com",
+	"password":"cyril@12345",
+	"admin": false,
+	"profile":"Software Engineer",
+	"skills":["java", "C#", "Python"]
+}
+
+
+#### List all Users
+url : http://0.0.0.0:5005/api/user/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+#### get one User
+url : http://0.0.0.0:5005/api/user/<user_id>/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+#### Delete one User
+url : http://0.0.0.0:5005/api/user/<user_id>/
+method : DELETE
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+
+#### Create Company
+url : http://0.0.0.0:5005/api/company/
+method : POST
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+payload : {
+	"name":"company name",
+	"comment": "some comment"
+}
+
+#### List all Companies
+url : http://0.0.0.0:5005/api/company/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+#### get one Company
+url : http://0.0.0.0:5005/api/company/<company_id>/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+#### Create Role
+url : http://0.0.0.0:5005/api/role/
+method : POST
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+payload : {
+	"name":"role name",
+	"comment": "some comment about the role"
+}
+
+#### List all Role
+url : http://0.0.0.0:5005/api/role/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+#### get one Role
+url : http://0.0.0.0:5005/api/role/<role_id>/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+
+#### Create Team
+url : http://0.0.0.0:5005/api/team/
+method : POST
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+payload : {
+	"name": "Team 1 CS",
+	"comment": "This is a Team for CS",
+	"company_id": 1
+}
+
+
+#### List all Teams
+url : http://0.0.0.0:5005/api/team/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+#### get one team
+url : http://0.0.0.0:5005/api/team/<team_id>/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+
+#### Create Employee
+url : http://0.0.0.0:5005/api/employee/
+method : POST
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+payload : {
+	"badge": "Wfo1323",
+	"start_date":"2019-03-17 13:10:00",
+	"end_date":null,
+	"is_full_time": true,
+	"user_id":2,
+	"role_id" : 1,
+	"team_id":2,
+	"company_id":1
+}
+
+#### List all Employees
+url : http://0.0.0.0:5005/api/employee/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+#### get one Employee
+url : http://0.0.0.0:5005/api/employee/<employee_id>/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+#### get all Employees of a Company
+url : http://0.0.0.0:5005/api/employee/company/<company_id>/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
+
+#### get all Employees of a team within a Company
+url : http://0.0.0.0:5005/api/employee/company/<company_id>/<team_id>/
+method : GET
+Headers : {
+	"Content-Type": "application/json",
+	"x-access-token": "The token value from the login"
+}
